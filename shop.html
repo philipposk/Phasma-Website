@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#2d8659">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Κατάστημα - Ημερολόγιο του φαρμακοποιού</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">Phasma Promotions</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Αρχική</a></li>
+                <li><a href="about.html">Σχετικά</a></li>
+                <li><a href="shop.html" class="active">Κατάστημα</a></li>
+                <li><a href="archive.html">Αρχείο</a></li>
+                <li><a href="settings.html">Ρυθμίσεις</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Shop Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Κατάστημα</h1>
+            <p class="page-subtitle">Παραγγείλετε το ημερολόγιο σας - Παραγγελίες μόνο τηλεφωνικά</p>
+        </div>
+    </section>
+
+    <!-- Shop Notice -->
+    <section class="shop-notice">
+        <div class="container">
+            <div class="notice-card">
+                <div class="notice-icon">📞</div>
+                <h2>Σημαντική Πληροφορία</h2>
+                <p>Οι παραγγελίες γίνονται <strong>μόνο τηλεφωνικά</strong>. Συμπληρώστε τη φόρμα παρακάτω και θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό για να ολοκληρώσουμε την παραγγελία σας.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="shop-products">
+        <div class="container">
+            <h2 class="section-title">Διαθέσιμα Προϊόντα</h2>
+            <p class="section-subtitle">Επιλέξτε το ημερολόγιο που θέλετε να παραγγείλετε</p>
+            
+            <div class="products-grid">
+                <!-- Current Year - Featured -->
+                <div class="product-card featured">
+                    <div class="product-badge">Νέα Έκδοση</div>
+                    <div class="product-image">
+                        <img src="images/calendar-cover-2026-web.png" alt="Ημερολόγιο 2026" class="product-img" onerror="this.src='images/calendar-cover-2026.png';">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Ημερολόγιο 2026</h3>
+                        <p class="product-description">Η νέα έκδοση του ημερολογίου με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια. Ελάχιστη παραγγελία: 50 τεμ.</p>
+                        <div class="product-price">1,90 € / τεμ.*</div>
+                        <div class="product-specs-mini">
+                            <span class="spec-tag">21 Χρόνια Εμπειρίας</span>
+                            <span class="spec-tag">Μόνο Εσείς Προβάλλεστε</span>
+                            <span class="spec-tag">Με BARCODE</span>
+                        </div>
+                        <p class="price-note">* χωρίς ΦΠΑ</p>
+                    </div>
+                </div>
+
+                <!-- Agenda Product -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/agenda-cover.png" alt="Ατζέντα 2026" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Ατζέντα 2026</h3>
+                        <p class="product-description">128 σελίδες με πρακτικό περιεχόμενο, εβδομαδιαίο ημερολόγιο, εορτολόγιο και χρήσιμες πληροφορίες. Ελάχιστη παραγγελία: 200 τεμ.</p>
+                        <div class="product-price">0,98 € / τεμ.*</div>
+                        <div class="product-specs-mini">
+                            <span class="spec-tag">8,5 x 15,5 cm</span>
+                            <span class="spec-tag">128 σελίδες</span>
+                        </div>
+                        <p class="price-note">* χωρίς ΦΠΑ</p>
+                    </div>
+                </div>
+
+                <!-- Magnet Product -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/magnet-sunflower.png" alt="Μαγνητάκι 2026" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Μαγνητάκι 2026</h3>
+                        <p class="product-description">Μαγνητάκι σε σχήμα ηλίανθου με το λογότυπο του φαρμακείου σας. Ελάχιστη παραγγελία: 200 τεμ.</p>
+                        <div class="product-price">0,98 € / τεμ.*</div>
+                        <div class="product-specs-mini">
+                            <span class="spec-tag">9,5 x 16 cm</span>
+                            <span class="spec-tag">Ματ πλαστικοποίηση</span>
+                        </div>
+                        <p class="price-note">* χωρίς ΦΠΑ</p>
+                    </div>
+                </div>
+
+                <!-- Previous Years -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <h2 class="section-title">Φόρμα Επικοινωνίας</h2>
+            <p class="section-subtitle">Συμπληρώστε τα στοιχεία σας και θα επικοινωνήσουμε μαζί σας</p>
+            
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name" class="form-label">Όνομα *</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone" class="form-label">Τηλεφωνικό</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="π.χ. 2101234567">
+                    <small class="form-hint">Συμπληρώστε τουλάχιστον τηλεφωνικό ή email</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="π.χ. example@email.com">
+                    <small class="form-hint">Συμπληρώστε τουλάχιστον τηλεφωνικό ή email</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="product" class="form-label">Προϊόν Ενδιαφέροντος</label>
+                    <select id="product" name="product" class="form-input">
+                        <option value="">Επιλέξτε προϊόν...</option>
+                        <option value="Ημερολόγιο 2026">Ημερολόγιο 2026 (1,90€/τεμ., ελάχ. 50 τεμ.)</option>
+                        <option value="Ατζέντα 2026">Ατζέντα 2026 (0,98€/τεμ., ελάχ. 200 τεμ.)</option>
+                        <option value="Μαγνητάκι 2026">Μαγνητάκι 2026 (0,98€/τεμ., ελάχ. 200 τεμ.)</option>
+                        <option value="Ημερολόγιο 2025">Ημερολόγιο 2025</option>
+                        <option value="Ημερολόγιο 2024">Ημερολόγιο 2024</option>
+                        <option value="Ημερολόγιο 2023">Ημερολόγιο 2023</option>
+                        <option value="άλλο">Άλλο</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity" class="form-label">Ποσότητα (προαιρετικό)</label>
+                    <input type="number" id="quantity" name="quantity" class="form-input" min="1" placeholder="π.χ. 1">
+                </div>
+
+                <div class="form-group">
+                    <label for="comments" class="form-label">Σχόλια / Επιπλέον Πληροφορίες</label>
+                    <textarea id="comments" name="comments" class="form-textarea" rows="5" placeholder="Αφήστε οποιαδήποτε επιπλέον πληροφορία ή σχόλια..."></textarea>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <span>Συμφωνώ με την επεξεργασία των προσωπικών μου δεδομένων για την εξυπηρέτηση της παραγγελίας μου *</span>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-button">Υποβολή Αίτησης</button>
+                </div>
+
+                <div id="form-message" class="form-message"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Phasma Promotions. Όλα τα δικαιώματα διατηρούνται.</p>
+            <p class="footer-contact">Για πληροφορίες και παραγγελίες: Τηλ. 210 9410131 | Email: fasma.promo@gmail.com</p>
+            <p class="footer-note">Ημερολόγιο του φαρμακοποιού - Έκδοση 2026 | 21 Χρόνια Αποκλειστικά στα Φαρμακεία</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="shop.js"></script>
+</body>
+</html>
+

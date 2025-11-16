@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#2d8659">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Ρυθμίσεις - Ημερολόγιο του φαρμακοποιού</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">Phasma Promotions</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Αρχική</a></li>
+                <li><a href="about.html">Σχετικά</a></li>
+                <li><a href="shop.html">Κατάστημα</a></li>
+                <li><a href="archive.html">Αρχείο</a></li>
+                <li><a href="settings.html" class="active">Ρυθμίσεις</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Settings Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Ρυθμίσεις</h1>
+            <p class="page-subtitle">Προσωποποιήστε την εμπειρία σας</p>
+        </div>
+    </section>
+
+    <!-- Settings Section -->
+    <section class="settings-page">
+        <div class="container">
+            <div class="settings-content">
+                <div class="settings-card">
+                    <h2 class="settings-card-title">Εμφάνιση</h2>
+                    <div class="settings-item">
+                        <div class="settings-item-content">
+                            <h3>Σκοτεινό Θέμα</h3>
+                            <p>Εναλλαγή μεταξύ φωτεινού και σκοτεινού θέματος</p>
+                        </div>
+                        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark mode">
+                            <span class="theme-icon">🌙</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h2 class="settings-card-title">Γλώσσα</h2>
+                    <div class="settings-item">
+                        <div class="settings-item-content">
+                            <h3>Γλώσσα Εμφάνισης</h3>
+                            <p>Η ιστοσελίδα είναι διαθέσιμη στα Ελληνικά</p>
+                        </div>
+                        <div class="language-badge">Ελληνικά</div>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h2 class="settings-card-title">Πληροφορίες</h2>
+                    <div class="settings-item">
+                        <div class="settings-item-content">
+                            <h3>Έκδοση Ιστοσελίδας</h3>
+                            <p>Τρέχουσα έκδοση: 1.0.0</p>
+                        </div>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-item-content">
+                            <h3>Εταιρεία</h3>
+                            <p>Phasma Promotions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h2 class="settings-card-title">Επικοινωνία</h2>
+                    <div class="settings-item">
+                        <div class="settings-item-content">
+                            <h3>Τηλεφωνική Παραγγελία</h3>
+                            <p>Για παραγγελίες επικοινωνήστε μαζί μας τηλεφωνικά</p>
+                            <p class="phone-number">Τηλ: [Εισάγετε αριθμό τηλεφώνου]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Phasma Promotions. Όλα τα δικαιώματα διατηρούνται.</p>
+            <p class="footer-contact">Για πληροφορίες και παραγγελίες: [Εισάγετε τηλεφωνικό αριθμό]</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -2,121 +2,206 @@
 <html lang="el">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#2d8659">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Ημερολόγιο του φαρμακοποιού - Phasma Promotions</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="logo">Phasma Promotions</div>
-            <ul class="nav-menu">
-                <li><a href="#home">Αρχική</a></li>
-                <li><a href="#features">Χαρακτηριστικά</a></li>
-                <li><a href="#archive">Αρχείο</a></li>
-                <li><a href="#about">Σχετικά</a></li>
+            <a href="index.html" class="nav-brand">Phasma Promotions</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Αρχική</a></li>
+                <li><a href="about.html">Σχετικά</a></li>
+                <li><a href="shop.html">Κατάστημα</a></li>
+                <li><a href="archive.html">Αρχείο</a></li>
+                <li><a href="settings.html">Ρυθμίσεις</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h1 class="hero-title">Ημερολόγιο του φαρμακοποιού</h1>
-            <p class="hero-subtitle">Το ετήσιο ημερολόγιο για τους φαρμακοποιούς</p>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="welcome-card">
+                <h1 class="welcome-title">Καλώς ήρθατε στο</h1>
+                <h2 class="welcome-name">Ημερολόγιο του φαρμακοποιού</h2>
+                <p class="welcome-subtitle">Το ετήσιο ημερολόγιο για τους φαρμακοποιούς</p>
+            </div>
             
-            <!-- Release Info -->
-            <div class="release-info">
-                <div class="release-date">
-                    <h2>Ημερομηνία Κυκλοφορίας</h2>
-                    <p class="date">2025</p>
-                </div>
-                <div class="order-info">
-                    <h2>Παραγγελίες</h2>
-                    <p>Για παραγγελίες επικοινωνήστε μαζί μας τηλεφωνικά</p>
-                    <p class="phone">Τηλ: [Εισάγετε αριθμό τηλεφώνου]</p>
+            <!-- Current Year Front Page - Large Preview -->
+            <div class="front-page-preview">
+                <h2 class="section-title">Έκδοση 2026</h2>
+                <div class="calendar-cover-large">
+                    <img src="images/calendar-cover-2026-web.png" alt="Ημερολόγιο 2026 - Εξώφυλλο" class="cover-image-large" onerror="this.src='images/calendar-cover-2026.png';">
                 </div>
             </div>
 
-            <!-- Current Year Front Page -->
-            <div class="front-page-preview">
-                <h2>Έκδοση 2025</h2>
-                <div class="calendar-cover">
-                    <img src="images/2025-cover.jpg" alt="Ημερολόγιο 2025 - Εξώφυλλο" class="cover-image">
-                    <p class="placeholder-text">[Εικόνα εξωφύλλου 2025]</p>
+            <!-- Release Info -->
+            <div class="release-info">
+                <div class="release-card">
+                    <div class="release-icon">📅</div>
+                    <h3>Ημερομηνία Κυκλοφορίας</h3>
+                    <p class="date">2026</p>
+                    <p class="release-note">Νέα έκδοση διαθέσιμη</p>
+                </div>
+                <div class="release-card">
+                    <div class="release-icon">📞</div>
+                    <h3>Παραγγελίες</h3>
+                    <p>Για παραγγελίες επικοινωνήστε μαζί μας τηλεφωνικά</p>
+                    <p class="phone">Τηλ: [Εισάγετε αριθμό τηλεφώνου]</p>
+                </div>
+                <div class="release-card">
+                    <div class="release-icon">📐</div>
+                    <h3>Διαστάσεις</h3>
+                    <p class="dimensions">Στάνταρ διαστάσεις<br>Ίδιες κάθε χρόνο</p>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Γιατί να Επιλέξετε το Ημερολόγιο του Φαρμακοποιού;</h2>
+            <p class="section-subtitle">21 Χρόνια Αποκλειστικά στα Φαρμακεία</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3 class="benefit-title">Μόνο Εσείς Προβάλλεστε</h3>
+                    <p class="benefit-text">Αποτελεί την προσωπική σας διαφημιστική προβολή. Δεν καταχωρούνται κανενός είδους άλλες διαφημίσεις - προβάλλεστε μόνον εσείς.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏠</div>
+                    <h3 class="benefit-title">Κάθε Ελληνικό Σπίτι</h3>
+                    <p class="benefit-text">Βρίσκεστε σε κάθε ελληνικό σπίτι για έναν ολόκληρο χρόνο, καθημερινά. Συνεχής παρουσία στους πελάτες σας.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3 class="benefit-title">Οικονομική Επένδυση</h3>
+                    <p class="benefit-text">Πληρώνετε μια φορά το χρόνο, αλλά οι πελάτες σας το χρησιμοποιούν όλο το χρόνο. Προσφέρετε ένα ανά οικογένεια.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3 class="benefit-title">Με BARCODE</h3>
+                    <p class="benefit-text">Τώρα με BARCODE για εύκολη διαχείριση και καταγραφή. Σύγχρονη τεχνολογία για καλύτερη οργάνωση.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section class="order-section">
+        <div class="container">
+            <div class="order-container">
+                <div class="order-content">
+                    <h2 class="order-title">Παραγγείλετε Τώρα</h2>
+                    <p class="order-subtitle">Για παραγγελίες του ημερολογίου 2026, επικοινωνήστε μαζί μας:</p>
+                    
+                    <div class="order-details-grid">
+                        <div class="order-contact-item">
+                            <div class="order-contact-icon">📞</div>
+                            <div>
+                                <h3>Τηλεφωνική Παραγγελία</h3>
+                                <p class="order-contact-value">210 9410131</p>
+                            </div>
+                        </div>
+                        
+                        <div class="order-contact-item">
+                            <div class="order-contact-icon">✉️</div>
+                            <div>
+                                <h3>Email</h3>
+                                <p class="order-contact-value">fasma.promo@gmail.com</p>
+                                <p class="order-contact-value-small">al.levanti@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-info-box">
+                        <p class="order-price-info">Τιμή: <strong>1,90 € / τεμ.*</strong></p>
+                        <p class="order-min-info">Ελάχιστη παραγγελία: <strong>50 τεμ.</strong></p>
+                        <p class="order-note-text">* χωρίς ΦΠΑ</p>
+                    </div>
+                    
+                    <p class="order-person">Υπεύθυνη έκδοσης: <strong>Αλεξία Λεβαντή</strong></p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="features">
+    <section class="features">
         <div class="container">
             <h2 class="section-title">Χαρακτηριστικά</h2>
+            <p class="section-subtitle">Ανακαλύψτε τι κάνει το ημερολόγιο μας μοναδικό</p>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">📅</div>
-                    <h3>Εξώφυλλο</h3>
-                    <p>Κάθε χρόνο ένα μοναδικό εξώφυλλο που αντικατοπτρίζει την εποχή</p>
+                    <div class="feature-icon">⭐</div>
+                    <h3 class="feature-title">Προσωπική Διαφήμιση</h3>
+                    <p class="feature-description">Αποτελεί την προσωπική σας διαφημιστική προβολή γιατί προβάλλεστε μόνον εσείς. Χωρίς καμία άλλη διαφήμιση.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📐</div>
-                    <h3>Διαστάσεις</h3>
-                    <p>Στάνταρ διαστάσεις που παραμένουν ίδιες κάθε χρόνο για εύκολη χρήση</p>
+                    <div class="feature-icon">🏠</div>
+                    <h3 class="feature-title">Κάθε Ελληνικό Σπίτι</h3>
+                    <p class="feature-description">Βρίσκεστε σε κάθε ελληνικό σπίτι για έναν ολόκληρο χρόνο, καθημερινά. Η παρουσία σας είναι συνεχής.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Εσωτερικές Σελίδες</h3>
-                    <p>Σελίδες με σχέδια και σκίτσα που καθιστούν το ημερολόγιο μοναδικό</p>
+                    <div class="feature-icon">💰</div>
+                    <h3 class="feature-title">Οικονομικό & Αποτελεσματικό</h3>
+                    <p class="feature-description">Πληρώνετε μια φορά το χρόνο αλλά οι πελάτες σας το χρησιμοποιούν όλο το χρόνο. Προσφέρετε ένα ανά οικογένεια.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Archive Section -->
-    <section id="archive" class="archive">
+    <!-- Quick Archive Preview -->
+    <section class="archive-preview">
         <div class="container">
             <h2 class="section-title">Προηγούμενες Εκδόσεις</h2>
+            <p class="section-subtitle">Δείτε τις προηγούμενες εκδόσεις του ημερολογίου</p>
             <div class="archive-grid">
                 <div class="archive-item">
                     <div class="archive-cover">
-                        <img src="images/2024-cover.jpg" alt="Ημερολόγιο 2024" class="archive-image">
-                        <p class="placeholder-text">[Εικόνα 2024]</p>
+                        <img src="images/2024-cover.jpg" alt="Ημερολόγιο 2024" class="archive-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <p class="placeholder-text" style="display:none;">[Εικόνα 2024]</p>
                     </div>
                     <h3>2024</h3>
                 </div>
                 <div class="archive-item">
                     <div class="archive-cover">
-                        <img src="images/2023-cover.jpg" alt="Ημερολόγιο 2023" class="archive-image">
-                        <p class="placeholder-text">[Εικόνα 2023]</p>
+                        <img src="images/2023-cover.jpg" alt="Ημερολόγιο 2023" class="archive-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <p class="placeholder-text" style="display:none;">[Εικόνα 2023]</p>
                     </div>
                     <h3>2023</h3>
                 </div>
                 <div class="archive-item">
                     <div class="archive-cover">
-                        <img src="images/2022-cover.jpg" alt="Ημερολόγιο 2022" class="archive-image">
-                        <p class="placeholder-text">[Εικόνα 2022]</p>
+                        <img src="images/2022-cover.jpg" alt="Ημερολόγιο 2022" class="archive-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <p class="placeholder-text" style="display:none;">[Εικόνα 2022]</p>
                     </div>
                     <h3>2022</h3>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">Σχετικά</h2>
-            <div class="about-content">
-                <div class="about-company">
-                    <h3>Η Εταιρεία</h3>
-                    <p>Η Phasma Promotions είναι ειδικευμένη στη δημιουργία και διανομή ειδικών προϊόντων για τον φαρμακευτικό κλάδο. Με πολλά χρόνια εμπειρίας, προσφέρουμε υψηλής ποιότητας προϊόντα που καλύπτουν τις ανάγκες των φαρμακοποιών.</p>
-                </div>
-                <div class="about-product">
-                    <h3>Το Προϊόν</h3>
-                    <p>Το "Ημερολόγιο του φαρμακοποιού" είναι ένα ετήσιο ημερολόγιο που σχεδιάστηκε ειδικά για τους φαρμακοποιούς. Κάθε έκδοση περιλαμβάνει ένα μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια, προσφέροντας τόσο πρακτικότητα όσο και αισθητική απόλαυση.</p>
-                </div>
+            <div class="archive-cta">
+                <a href="archive.html" class="cta-button">Δείτε όλο το αρχείο →</a>
             </div>
         </div>
     </section>
@@ -124,12 +209,12 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Phasma Promotions. Όλα τα δικαιώματα διατηρούνται.</p>
-            <p>Για πληροφορίες και παραγγελίες: [Εισάγετε τηλεφωνικό αριθμό]</p>
+            <p>&copy; 2026 Phasma Promotions. Όλα τα δικαιώματα διατηρούνται.</p>
+            <p class="footer-contact">Για πληροφορίες και παραγγελίες: Τηλ. 210 9410131 | Email: fasma.promo@gmail.com</p>
+            <p class="footer-note">Ημερολόγιο του φαρμακοποιού - Έκδοση 2026 | 21 Χρόνια Αποκλειστικά στα Φαρμακεία</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
