@@ -1,0 +1,357 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pharmacy-green: #2d8659;
+    --pharmacy-green-light: #4a9d7a;
+    --pharmacy-green-dark: #1f5d3f;
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --text-dark: #333333;
+    --text-light: #666666;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--pharmacy-green);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--pharmacy-green);
+}
+
+/* Hero Section */
+.hero {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+}
+
+.hero-title {
+    font-size: 3rem;
+    color: var(--pharmacy-green-dark);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+}
+
+/* Release Info */
+.release-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(45, 134, 89, 0.1);
+}
+
+.release-date,
+.order-info {
+    text-align: center;
+}
+
+.release-date h2,
+.order-info h2 {
+    color: var(--pharmacy-green);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.release-date .date {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--pharmacy-green-dark);
+}
+
+.order-info p {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.phone {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--pharmacy-green);
+    margin-top: 1rem;
+}
+
+/* Front Page Preview */
+.front-page-preview {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.front-page-preview h2 {
+    color: var(--pharmacy-green-dark);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.calendar-cover {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.cover-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.placeholder-text {
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 1rem;
+    padding: 2rem;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+}
+
+/* Features Section */
+.features {
+    padding: 5rem 0;
+    background-color: var(--white);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--pharmacy-green-dark);
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: var(--light-gray);
+    padding: 2.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(45, 134, 89, 0.2);
+    border-color: var(--pharmacy-green-light);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: var(--pharmacy-green-dark);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.feature-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* Archive Section */
+.archive {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+}
+
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.archive-item {
+    text-align: center;
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.archive-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(45, 134, 89, 0.2);
+}
+
+.archive-cover {
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.archive-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.archive-item h3 {
+    color: var(--pharmacy-green-dark);
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* About Section */
+.about {
+    padding: 5rem 0;
+    background-color: var(--white);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-company,
+.about-product {
+    background-color: var(--light-gray);
+    padding: 2.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--pharmacy-green);
+}
+
+.about-company h3,
+.about-product h3 {
+    color: var(--pharmacy-green-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.about-company p,
+.about-product p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--pharmacy-green-dark);
+    color: var(--white);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .release-info {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid,
+    .archive-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
