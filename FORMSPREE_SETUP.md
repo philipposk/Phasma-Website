@@ -16,14 +16,14 @@
 **Form URL:** https://formspree.io/f/xvgdnyoe
 
 **Test Email (προσωρινά):** `dimeanastasiou@gmail.com`  
-**Production Email (μετά το test):** `fasmagr@gmail.com`
+**Production Email (μετά το test):** `fasma.promo@gmail.com`
 
 ### Βήμα 4: Ρύθμιση Email στο Formspree
 
 1. Στο Formspree dashboard, επιλέξτε το form `xvgdnyoe`
 2. Στο **"Email Notifications"**, προσθέστε:
    - `dimeanastasiou@gmail.com` (για test)
-   - `fasmagr@gmail.com` (για production)
+   - `fasma.promo@gmail.com` (για production)
 3. Κάντε **Save**
 
 ### Βήμα 5: Test
@@ -32,7 +32,7 @@
 2. Συμπληρώστε τη φόρμα επικοινωνίας
 3. Κάντε submit
 4. Ελέγξτε το email `dimeanastasiou@gmail.com` για το νέο μήνυμα
-5. Μετά το test, αλλάξτε το email στο Formspree dashboard σε `fasmagr@gmail.com`
+5. Μετά το test, αλλάξτε το email στο Formspree dashboard σε `fasma.promo@gmail.com`
 
 ## 🔄 Εναλλακτικές Λύσεις
 
@@ -51,7 +51,7 @@
 - Το Formspree free tier επιτρέπει **50 submissions/μήνα**
 - Αν χρειάζεστε περισσότερα, υπάρχουν paid plans
 - **Test:** Emails θα σταλούν στο `dimeanastasiou@gmail.com`
-- **Production:** Μετά το test, αλλάξτε σε `fasmagr@gmail.com` στο Formspree dashboard
+- **Production:** Μετά το test, αλλάξτε σε `fasma.promo@gmail.com` στο Formspree dashboard
 
 ## 🐛 Troubleshooting
 

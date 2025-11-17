@@ -5,7 +5,7 @@
 1. **Πηγαίνετε στο:** https://formspree.io
 2. **Κάντε κλικ "Sign Up"** (ή "Get Started")
 3. **Εισάγετε:**
-   - Email: `fasmagr@gmail.com` (ή οποιοδήποτε email θέλετε)
+   - Email: `fasma.promo@gmail.com` (ή οποιοδήποτε email θέλετε)
    - Password: (δημιουργήστε ένα password)
 4. **Κάντε κλικ "Sign Up"**
 5. **Επιβεβαιώστε το email** (θα λάβετε email verification)
@@ -28,7 +28,7 @@
 
 1. **Πηγαίνετε στο:** https://formspree.io/account
 2. **Στο "LINKED EMAILS"**, κάντε κλικ **"+ Add Email"**
-3. **Εισάγετε το email:** `fasmagr@gmail.com` (ή `dimeanastasiou@gmail.com`)
+3. **Εισάγετε το email:** `fasma.promo@gmail.com` (ή `dimeanastasiou@gmail.com`)
 4. **Κάντε "Add"**
 5. **Ελέγξτε το email** και κάντε κλικ στο verification link
 
@@ -41,7 +41,7 @@
 2. **Στο "Actions" section**, βρείτε το **"Email"** action
 3. **Κάντε κλικ στο "Email" action**
 4. **Στο modal που ανοίγει:**
-   - **Email Address:** Επιλέξτε `fasmagr@gmail.com` (από το dropdown)
+   - **Email Address:** Επιλέξτε `fasma.promo@gmail.com` (από το dropdown)
    - **Enabled:** Βεβαιωθείτε ότι είναι **ON** (μπλε)
 5. **Κάντε "Save"**
 
@@ -101,7 +101,7 @@ const formspreeEndpoint = 'https://formspree.io/f/abc123xy';
 
 1. **Συμπληρώστε τη φόρμα** στο shop.html
 2. **Κάντε submit**
-3. **Ελέγξτε το email** `fasmagr@gmail.com` για το νέο μήνυμα
+3. **Ελέγξτε το email** `fasma.promo@gmail.com` για το νέο μήνυμα
 4. **Ελέγξτε το Formspree Submissions:**
    - https://formspree.io/forms/YOUR_NEW_FORM_ID/submissions
    - Θα πρέπει να βλέπετε την υποβολή εκεί

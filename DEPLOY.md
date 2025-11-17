@@ -65,7 +65,11 @@ TTL: 3600
 ### 2.4 Ενεργοποίηση HTTPS
 
 1. Μετά την ενεργοποίηση του domain, πηγαίνετε στο **Settings** → **Pages**
-2. Ενεργοποιήστε το **Enforce HTTPS** (μπορεί να χρειαστεί λίγος χρόνος)
+2. Περιμένετε να εκδοθεί το SSL certificate από το GitHub (μπορεί να πάρει 24-48 ώρες)
+3. Όταν το certificate είναι έτοιμο, θα εμφανιστεί το checkbox **Enforce HTTPS**
+4. Ενεργοποιήστε το **Enforce HTTPS** για να επιβάλλετε HTTPS σε όλες τις συνδέσεις
+
+**Σημαντικό:** Το GitHub Pages εκδίδει αυτόματα SSL certificates για custom domains, αλλά αυτό μπορεί να πάρει χρόνο. Αν βλέπετε το μήνυμα "Unavailable for your site because a certificate has not yet been issued", περιμένετε 24-48 ώρες μετά τη σωστή ρύθμιση των DNS records.
 
 ## 📝 Σημειώσεις
 
@@ -93,6 +97,19 @@ git push origin main
 - Ελέγξτε τα DNS records με: https://dnschecker.org
 - Περιμένετε 24-48 ώρες για DNS propagation
 - Βεβαιωθείτε ότι το `CNAME` file υπάρχει στο repository
+
+### Το HTTPS δεν είναι διαθέσιμο / Certificate δεν έχει εκδοθεί
+- **Αυτό είναι φυσιολογικό** - Το GitHub Pages εκδίδει αυτόματα SSL certificates, αλλά μπορεί να πάρει 24-48 ώρες
+- Βεβαιωθείτε ότι τα DNS records είναι σωστά ρυθμισμένα:
+  - Για subdomain (π.χ. phasma.6x7.gr): Χρησιμοποιήστε CNAME record που δείχνει στο `username.github.io`
+  - Για root domain: Χρησιμοποιήστε A records με τις IP addresses του GitHub
+- Ελέγξτε ότι το domain λειτουργεί σωστά με HTTP πρώτα
+- Περιμένετε - το certificate θα εκδοθεί αυτόματα από το GitHub
+- Ελέγξτε το status στο **Settings** → **Pages** → **Custom domain**
+- Αν μετά από 48 ώρες δεν έχει εκδοθεί, δοκιμάστε να:
+  1. Αφαιρέσετε το custom domain από τις ρυθμίσεις
+  2. Περιμένετε 5-10 λεπτά
+  3. Προσθέστε το ξανά
 
 ## 📞 Support
 

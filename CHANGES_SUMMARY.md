@@ -18,7 +18,7 @@
 
 ### 3. Στοιχεία Επικοινωνίας
 - ✅ Τηλέφωνο: 210 9410131 → **210 9410331** (παντού)
-- ✅ Email: fasma.promo@gmail.com, al.levanti@gmail.com → **fasmagr@gmail.com** (παντού)
+- ✅ Email: fasma.promo@gmail.com, al.levanti@gmail.com → **fasma.promo@gmail.com** (παντού)
 - ✅ Υπεύθυνη: **Αλεξία Λεβαντή** (διορθώθηκε)
 
 ### 4. Διαστάσεις Ημερολογίου
@@ -71,5 +71,5 @@
 
 - Το Formspree free tier: 50 submissions/μήνα
 - Αν χρειάζεστε περισσότερα, υπάρχουν paid plans
-- Όλα τα emails θα σταλούν στο `fasmagr@gmail.com`
+- Όλα τα emails θα σταλούν στο `fasma.promo@gmail.com`
 
