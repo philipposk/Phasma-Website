@@ -10,30 +10,20 @@
 2. Κάντε **Sign Up** (δωρεάν)
 3. Επιβεβαιώστε το email σας
 
-### Βήμα 2: Δημιουργία Νέου Form
+### ✅ Ρύθμιση Ολοκληρώθηκε
 
-1. Μετά το login, κάντε κλικ **"New Form"**
-2. Δώστε όνομα: "Phasma Calendar Contact Form"
-3. Το Formspree θα δημιουργήσει ένα **Form ID** (π.χ. `xvgkqjpn`)
-4. **ΑΝΤΙΓΡΑΨΤΕ** το Form ID
+**Form ID:** `xvgdnyoe`  
+**Form URL:** https://formspree.io/f/xvgdnyoe
 
-### Βήμα 3: Ενημέρωση του shop.js
-
-1. Ανοίξτε το `shop.js` file
-2. Βρείτε τη γραμμή:
-   ```javascript
-   const formspreeEndpoint = 'https://formspree.io/f/YOUR_FORM_ID';
-   ```
-3. Αντικαταστήστε το `YOUR_FORM_ID` με το Form ID που πήρατε από το Formspree
-   ```javascript
-   const formspreeEndpoint = 'https://formspree.io/f/xvgkqjpn';
-   ```
+**Test Email (προσωρινά):** `dimeanastasiou@gmail.com`  
+**Production Email (μετά το test):** `fasmagr@gmail.com`
 
 ### Βήμα 4: Ρύθμιση Email στο Formspree
 
-1. Στο Formspree dashboard, επιλέξτε το form σας
+1. Στο Formspree dashboard, επιλέξτε το form `xvgdnyoe`
 2. Στο **"Email Notifications"**, προσθέστε:
-   - `fasmagr@gmail.com`
+   - `dimeanastasiou@gmail.com` (για test)
+   - `fasmagr@gmail.com` (για production)
 3. Κάντε **Save**
 
 ### Βήμα 5: Test
@@ -41,7 +31,8 @@
 1. Ανοίξτε το website
 2. Συμπληρώστε τη φόρμα επικοινωνίας
 3. Κάντε submit
-4. Ελέγξτε το email `fasmagr@gmail.com` για το νέο μήνυμα
+4. Ελέγξτε το email `dimeanastasiou@gmail.com` για το νέο μήνυμα
+5. Μετά το test, αλλάξτε το email στο Formspree dashboard σε `fasmagr@gmail.com`
 
 ## 🔄 Εναλλακτικές Λύσεις
 
@@ -59,7 +50,8 @@
 
 - Το Formspree free tier επιτρέπει **50 submissions/μήνα**
 - Αν χρειάζεστε περισσότερα, υπάρχουν paid plans
-- Όλα τα emails θα σταλούν στο `fasmagr@gmail.com` (όπως το ρυθμίσατε)
+- **Test:** Emails θα σταλούν στο `dimeanastasiou@gmail.com`
+- **Production:** Μετά το test, αλλάξτε σε `fasmagr@gmail.com` στο Formspree dashboard
 
 ## 🐛 Troubleshooting
 

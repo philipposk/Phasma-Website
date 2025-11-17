@@ -90,9 +90,8 @@ document.addEventListener('DOMContentLoaded', function() {
             consent: document.getElementById('consent').checked
         };
 
-        // Send to Formspree (replace YOUR_FORM_ID with your actual Formspree form ID)
-        // To get a form ID: 1. Go to https://formspree.io 2. Create account 3. Create new form 4. Copy form ID
-        const formspreeEndpoint = 'https://formspree.io/f/YOUR_FORM_ID';
+        // Send to Formspree
+        const formspreeEndpoint = 'https://formspree.io/f/xvgdnyoe';
         
         // Show loading state
         const submitButton = form.querySelector('.submit-button');
