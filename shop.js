@@ -99,35 +99,47 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.disabled = true;
         submitButton.textContent = 'Αποστολή...';
 
+        const requestBody = {
+            name: formData.name,
+            phone: formData.phone || 'Δεν δόθηκε',
+            email: formData.email || 'Δεν δόθηκε',
+            product: formData.product || 'Δεν επιλέχθηκε',
+            quantity: formData.quantity || 'Δεν καθορίστηκε',
+            comments: formData.comments || 'Δεν υπάρχουν σχόλια',
+            _subject: 'Νέα Παραγγελία - Ημερολόγιο Φαρμακοποιού',
+            _replyto: formData.email || formData.phone || ''
+        };
+        
+        console.log('Sending to Formspree:', formspreeEndpoint, requestBody);
+        
         fetch(formspreeEndpoint, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify({
-                name: formData.name,
-                phone: formData.phone || 'Δεν δόθηκε',
-                email: formData.email || 'Δεν δόθηκε',
-                product: formData.product || 'Δεν επιλέχθηκε',
-                quantity: formData.quantity || 'Δεν καθορίστηκε',
-                comments: formData.comments || 'Δεν υπάρχουν σχόλια',
-                _subject: 'Νέα Παραγγελία - Ημερολόγιο Φαρμακοποιού',
-                _replyto: formData.email || formData.phone || ''
-            })
+            body: JSON.stringify(requestBody)
         })
-        .then(async response => {
-            const responseData = await response.json().catch(() => ({}));
-            console.log('Formspree response:', response.status, responseData);
-            
-            if (response.ok) {
-                showMessage('Η αίτησή σας υποβλήθηκε επιτυχώς! Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.', 'success');
-                form.reset();
-            } else {
-                // Log the error details
-                console.error('Formspree error response:', responseData);
-                throw new Error(responseData.error || 'Submission failed');
-            }
+        .then(response => {
+            console.log('Formspree response status:', response.status, response.statusText);
+            return response.text().then(text => {
+                let responseData = {};
+                try {
+                    responseData = JSON.parse(text);
+                } catch (e) {
+                    console.log('Response is not JSON:', text);
+                    responseData = { raw: text };
+                }
+                console.log('Formspree response data:', responseData);
+                
+                if (response.ok) {
+                    showMessage('Η αίτησή σας υποβλήθηκε επιτυχώς! Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.', 'success');
+                    form.reset();
+                } else {
+                    console.error('Formspree error response:', responseData);
+                    showMessage('Υπήρξε ένα σφάλμα. Παρακαλώ δοκιμάστε ξανά ή επικοινωνήστε μαζί μας απευθείας στο 210 9410331.', 'error');
+                }
+            });
         })
         .catch(error => {
             console.error('Form submission error:', error);
