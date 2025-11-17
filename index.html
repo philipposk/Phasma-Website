@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta name="theme-color" content="#2d8659">
     <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Ημερολόγιο του φαρμακοποιού - Phasma Promotions</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,12 +61,12 @@
                     <div class="release-icon">📞</div>
                     <h3>Παραγγελίες</h3>
                     <p>Για παραγγελίες επικοινωνήστε μαζί μας τηλεφωνικά</p>
-                    <p class="phone">Τηλ: [Εισάγετε αριθμό τηλεφώνου]</p>
+                    <p class="phone">Τηλ: <span class="copyable-phone">210 9410331</span></p>
                 </div>
                 <div class="release-card">
                     <div class="release-icon">📐</div>
                     <h3>Διαστάσεις</h3>
-                    <p class="dimensions">Στάνταρ διαστάσεις<br>Ίδιες κάθε χρόνο</p>
+                    <p class="dimensions">30x48 εκ.<br>12σέλιδο</p>
                 </div>
             </div>
         </div>
@@ -121,7 +122,7 @@
                             <div class="order-contact-icon">📞</div>
                             <div>
                                 <h3>Τηλεφωνική Παραγγελία</h3>
-                                <p class="order-contact-value">210 9410131</p>
+                                <p class="order-contact-value copyable-phone">210 9410331</p>
                             </div>
                         </div>
                         
@@ -129,8 +130,7 @@
                             <div class="order-contact-icon">✉️</div>
                             <div>
                                 <h3>Email</h3>
-                                <p class="order-contact-value">fasma.promo@gmail.com</p>
-                                <p class="order-contact-value-small">al.levanti@gmail.com</p>
+                                <p class="order-contact-value copyable-email">fasmagr@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -141,7 +141,7 @@
                         <p class="order-note-text">* χωρίς ΦΠΑ</p>
                     </div>
                     
-                    <p class="order-person">Υπεύθυνη έκδοσης: <strong>Αλεξία Λεβαντή</strong></p>
+                    <p class="order-person">Υπεύθυνη έκδοσης: <strong>Αλεξία Δεβεντή</strong></p>
                 </div>
             </div>
         </div>
@@ -210,7 +210,7 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Phasma Promotions. Όλα τα δικαιώματα διατηρούνται.</p>
-            <p class="footer-contact">Για πληροφορίες και παραγγελίες: Τηλ. 210 9410131 | Email: fasma.promo@gmail.com</p>
+            <p class="footer-contact">Για πληροφορίες και παραγγελίες: Τηλ. <span class="copyable-phone">210 9410331</span> | Email: <span class="copyable-email">fasmagr@gmail.com</span></p>
             <p class="footer-note">Ημερολόγιο του φαρμακοποιού - Έκδοση 2026 | 21 Χρόνια Αποκλειστικά στα Φαρμακεία</p>
         </div>
     </footer>

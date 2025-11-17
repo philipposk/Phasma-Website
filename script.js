@@ -186,3 +186,111 @@ navLinksAll.forEach(link => {
         link.classList.add('active');
     }
 });
+
+// Copy to clipboard functionality
+function copyToClipboard(text, element) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+            // Show feedback
+            const originalText = element.textContent;
+            const originalColor = element.style.color;
+            element.textContent = 'Αντιγράφηκε!';
+            element.style.color = 'var(--pharmacy-green, #2d8659)';
+            
+            setTimeout(() => {
+                element.textContent = originalText;
+                element.style.color = originalColor;
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy:', err);
+            // Fallback for older browsers
+            fallbackCopyToClipboard(text, element);
+        });
+    } else {
+        fallbackCopyToClipboard(text, element);
+    }
+}
+
+// Fallback copy method for older browsers
+function fallbackCopyToClipboard(text, element) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        document.execCommand('copy');
+        const originalText = element.textContent;
+        element.textContent = 'Αντιγράφηκε!';
+        element.style.color = 'var(--pharmacy-green, #2d8659)';
+        
+        setTimeout(() => {
+            element.textContent = originalText;
+            element.style.color = '';
+        }, 2000);
+    } catch (err) {
+        console.error('Fallback copy failed:', err);
+    }
+    
+    document.body.removeChild(textArea);
+}
+
+// Make phone numbers and emails clickable to copy
+document.addEventListener('DOMContentLoaded', function() {
+    // Find all phone numbers (various formats)
+    const phoneSelectors = [
+        '.phone', 
+        '.phone-number', 
+        '.order-contact-value', 
+        '.footer-contact',
+        '.copyable-phone'
+    ];
+    
+    phoneSelectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach(element => {
+            const text = element.textContent || element.innerText;
+            // Match Greek phone numbers (210 followed by 7 digits, with or without spaces)
+            const phoneMatch = text.match(/210\s?\d{7}/);
+            if (phoneMatch) {
+                const phone = phoneMatch[0].replace(/\s/g, '');
+                element.style.cursor = 'pointer';
+                element.style.textDecoration = 'underline';
+                element.style.textDecorationStyle = 'dotted';
+                element.title = 'Κάντε κλικ για αντιγραφή: ' + phone;
+                element.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    copyToClipboard(phone, element);
+                });
+            }
+        });
+    });
+    
+    // Find all emails
+    const emailSelectors = [
+        '.order-contact-value', 
+        '.footer-contact',
+        '.copyable-email'
+    ];
+    
+    emailSelectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach(element => {
+            const text = element.textContent || element.innerText;
+            // Match email addresses
+            const emailMatch = text.match(/[\w\.-]+@[\w\.-]+\.\w+/);
+            if (emailMatch) {
+                const email = emailMatch[0];
+                element.style.cursor = 'pointer';
+                element.style.textDecoration = 'underline';
+                element.style.textDecorationStyle = 'dotted';
+                element.title = 'Κάντε κλικ για αντιγραφή: ' + email;
+                element.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    copyToClipboard(email, element);
+                });
+            }
+        });
+    });
+});

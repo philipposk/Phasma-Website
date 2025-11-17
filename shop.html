@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta name="theme-color" content="#2d8659">
     <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Κατάστημα - Ημερολόγιο του φαρμακοποιού</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,11 +83,11 @@
                         <img src="images/agenda-cover.png" alt="Ατζέντα 2026" class="product-img">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Ατζέντα 2026</h3>
-                        <p class="product-description">128 σελίδες με πρακτικό περιεχόμενο, εβδομαδιαίο ημερολόγιο, εορτολόγιο και χρήσιμες πληροφορίες. Ελάχιστη παραγγελία: 200 τεμ.</p>
+                        <h3 class="product-name">Ατζέντα 2026 (ΚΩΔ. 1)</h3>
+                        <p class="product-description">Πλήρως οργανωμένη Ατζέντα με 128 σελίδες. Περιλαμβάνει εβδομαδιαίο ημερολόγιο, υπολογισμό ημερήσιας τιμής (Δ.Ε.Τ.), εξέταση φαρμάκων, ασφαλιστική ενημέρωση και συμβουλές. Ελάχιστη παραγγελία: 200 τεμ.</p>
                         <div class="product-price">0,98 € / τεμ.*</div>
                         <div class="product-specs-mini">
-                            <span class="spec-tag">8,5 x 15,5 cm</span>
+                            <span class="spec-tag">9,5×16 εκ.</span>
                             <span class="spec-tag">128 σελίδες</span>
                         </div>
                         <p class="price-note">* χωρίς ΦΠΑ</p>
@@ -99,11 +100,11 @@
                         <img src="images/magnet-sunflower.png" alt="Μαγνητάκι 2026" class="product-img">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Μαγνητάκι 2026</h3>
-                        <p class="product-description">Μαγνητάκι σε σχήμα ηλίανθου με το λογότυπο του φαρμακείου σας. Ελάχιστη παραγγελία: 200 τεμ.</p>
+                        <h3 class="product-name">Μαγνητάκι 2026 (ΚΩΔ. 2)</h3>
+                        <p class="product-description">Μαγνητάκι σε σχήμα ηλίανθου με το λογότυπο του φαρμακείου σας. Ελάχιστη παραγγελία: 1000 τεμ.</p>
                         <div class="product-price">0,98 € / τεμ.*</div>
                         <div class="product-specs-mini">
-                            <span class="spec-tag">9,5 x 16 cm</span>
+                            <span class="spec-tag">6,5 x 9,5 εκ.</span>
                             <span class="spec-tag">Ματ πλαστικοποίηση</span>
                         </div>
                         <p class="price-note">* χωρίς ΦΠΑ</p>
@@ -128,15 +129,15 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="phone" class="form-label">Τηλεφωνικό</label>
+                    <label for="phone" class="form-label">Τηλέφωνο</label>
                     <input type="tel" id="phone" name="phone" class="form-input" placeholder="π.χ. 2101234567">
-                    <small class="form-hint">Συμπληρώστε τουλάχιστον τηλεφωνικό ή email</small>
+                    <small class="form-hint">Συμπληρώστε τουλάχιστον ένα από τα δύο (τηλέφωνο ή email)</small>
                 </div>
 
                 <div class="form-group">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" id="email" name="email" class="form-input" placeholder="π.χ. example@email.com">
-                    <small class="form-hint">Συμπληρώστε τουλάχιστον τηλεφωνικό ή email</small>
+                    <small class="form-hint">Συμπληρώστε τουλάχιστον ένα από τα δύο (τηλέφωνο ή email)</small>
                 </div>
 
                 <div class="form-group">
@@ -144,11 +145,8 @@
                     <select id="product" name="product" class="form-input">
                         <option value="">Επιλέξτε προϊόν...</option>
                         <option value="Ημερολόγιο 2026">Ημερολόγιο 2026 (1,90€/τεμ., ελάχ. 50 τεμ.)</option>
-                        <option value="Ατζέντα 2026">Ατζέντα 2026 (0,98€/τεμ., ελάχ. 200 τεμ.)</option>
-                        <option value="Μαγνητάκι 2026">Μαγνητάκι 2026 (0,98€/τεμ., ελάχ. 200 τεμ.)</option>
-                        <option value="Ημερολόγιο 2025">Ημερολόγιο 2025</option>
-                        <option value="Ημερολόγιο 2024">Ημερολόγιο 2024</option>
-                        <option value="Ημερολόγιο 2023">Ημερολόγιο 2023</option>
+                        <option value="Ατζέντα 2026 (ΚΩΔ. 1)">Ατζέντα 2026 (ΚΩΔ. 1) (0,98€/τεμ., ελάχ. 200 τεμ.)</option>
+                        <option value="Μαγνητάκι 2026 (ΚΩΔ. 2)">Μαγνητάκι 2026 (ΚΩΔ. 2) (0,98€/τεμ., ελάχ. 1000 τεμ.)</option>
                         <option value="άλλο">Άλλο</option>
                     </select>
                 </div>
@@ -166,7 +164,7 @@
                 <div class="form-group checkbox-group">
                     <label class="checkbox-label">
                         <input type="checkbox" id="consent" name="consent" required>
-                        <span>Συμφωνώ με την επεξεργασία των προσωπικών μου δεδομένων για την εξυπηρέτηση της παραγγελίας μου *</span>
+                        <span>Συμφωνώ με την επεξεργασία των προσωπικών μου δεδομένων σύμφωνα με τον Γενικό Κανονισμό Προστασίας Δεδομένων (GDPR) *</span>
                     </label>
                 </div>
 
@@ -183,7 +181,7 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Phasma Promotions. Όλα τα δικαιώματα διατηρούνται.</p>
-            <p class="footer-contact">Για πληροφορίες και παραγγελίες: Τηλ. 210 9410131 | Email: fasma.promo@gmail.com</p>
+            <p class="footer-contact">Για πληροφορίες και παραγγελίες: Τηλ. <span class="copyable-phone">210 9410331</span> | Email: <span class="copyable-email">fasmagr@gmail.com</span></p>
             <p class="footer-note">Ημερολόγιο του φαρμακοποιού - Έκδοση 2026 | 21 Χρόνια Αποκλειστικά στα Φαρμακεία</p>
         </div>
     </footer>

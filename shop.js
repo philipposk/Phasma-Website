@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Validate contact info
         if (!validateContactInfo()) {
-            showMessage('Παρακαλώ συμπληρώστε τουλάχιστον το τηλεφωνικό ή το email.', 'error');
+            showMessage('Παρακαλώ συμπληρώστε τουλάχιστον ένα από τα δύο (τηλέφωνο ή email).', 'error');
             if (!phoneInput.value.trim()) {
                 phoneInput.focus();
             } else {
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Validate phone if provided
         const phone = phoneInput.value.trim();
         if (phone && !validatePhone(phone)) {
-            showMessage('Παρακαλώ εισάγετε έγκυρο τηλεφωνικό (10 ψηφία).', 'error');
+            showMessage('Παρακαλώ εισάγετε έγκυρο τηλέφωνο (10 ψηφία).', 'error');
             phoneInput.focus();
             return;
         }
@@ -90,40 +90,55 @@ document.addEventListener('DOMContentLoaded', function() {
             consent: document.getElementById('consent').checked
         };
 
-        // Here you would normally send the data to a server
-        // For now, we'll just show a success message and log the data
-        console.log('Form submitted:', formData);
+        // Send to Formspree (replace YOUR_FORM_ID with your actual Formspree form ID)
+        // To get a form ID: 1. Go to https://formspree.io 2. Create account 3. Create new form 4. Copy form ID
+        const formspreeEndpoint = 'https://formspree.io/f/YOUR_FORM_ID';
+        
+        // Show loading state
+        const submitButton = form.querySelector('.submit-button');
+        const originalButtonText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Αποστολή...';
 
-        // Show success message
-        showMessage('Η αίτησή σας υποβλήθηκε επιτυχώς! Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.', 'success');
-
-        // Reset form
-        form.reset();
-
-        // Optional: You can send this data to your backend
-        // Example:
-        // fetch('/api/contact', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(formData)
-        // })
-        // .then(response => response.json())
-        // .then(data => {
-        //     showMessage('Η αίτησή σας υποβλήθηκε επιτυχώς!', 'success');
-        //     form.reset();
-        // })
-        // .catch(error => {
-        //     showMessage('Υπήρξε ένα σφάλμα. Παρακαλώ δοκιμάστε ξανά.', 'error');
-        // });
+        fetch(formspreeEndpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: formData.name,
+                phone: formData.phone || 'Δεν δόθηκε',
+                email: formData.email || 'Δεν δόθηκε',
+                product: formData.product || 'Δεν επιλέχθηκε',
+                quantity: formData.quantity || 'Δεν καθορίστηκε',
+                comments: formData.comments || 'Δεν υπάρχουν σχόλια',
+                _subject: 'Νέα Παραγγελία - Ημερολόγιο Φαρμακοποιού',
+                _replyto: formData.email || formData.phone
+            })
+        })
+        .then(response => {
+            if (response.ok) {
+                showMessage('Η αίτησή σας υποβλήθηκε επιτυχώς! Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.', 'success');
+                form.reset();
+            } else {
+                throw new Error('Submission failed');
+            }
+        })
+        .catch(error => {
+            console.error('Form submission error:', error);
+            showMessage('Υπήρξε ένα σφάλμα. Παρακαλώ δοκιμάστε ξανά ή επικοινωνήστε μαζί μας απευθείας στο 210 9410331.', 'error');
+        })
+        .finally(() => {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+        });
     });
 
     // Real-time validation feedback
     phoneInput.addEventListener('blur', function() {
         const phone = this.value.trim();
         if (phone && !validatePhone(phone)) {
-            this.setCustomValidity('Παρακαλώ εισάγετε έγκυρο τηλεφωνικό (10 ψηφία)');
+            this.setCustomValidity('Παρακαλώ εισάγετε έγκυρο τηλέφωνο (10 ψηφία)');
         } else {
             this.setCustomValidity('');
         }
