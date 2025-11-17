@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
             body: JSON.stringify({
                 name: formData.name,
@@ -112,15 +113,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 quantity: formData.quantity || 'Δεν καθορίστηκε',
                 comments: formData.comments || 'Δεν υπάρχουν σχόλια',
                 _subject: 'Νέα Παραγγελία - Ημερολόγιο Φαρμακοποιού',
-                _replyto: formData.email || formData.phone
+                _replyto: formData.email || formData.phone || ''
             })
         })
-        .then(response => {
+        .then(async response => {
+            const responseData = await response.json().catch(() => ({}));
+            console.log('Formspree response:', response.status, responseData);
+            
             if (response.ok) {
                 showMessage('Η αίτησή σας υποβλήθηκε επιτυχώς! Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.', 'success');
                 form.reset();
             } else {
-                throw new Error('Submission failed');
+                // Log the error details
+                console.error('Formspree error response:', responseData);
+                throw new Error(responseData.error || 'Submission failed');
             }
         })
         .catch(error => {
