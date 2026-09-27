@@ -2,37 +2,54 @@
 <html lang="el">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#2d8659">
+    <meta name="description" content="Αρχείο εκδόσεων του ημερολογίου του φαρμακοποιού από το 2005 έως το 2025. Phasma Promotions.">
     <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Αρχείο - Ημερολόγιο του φαρμακοποιού</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/logo-small.png">
+    <link rel="canonical" href="https://phasma.6x7.gr/archive.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://phasma.6x7.gr/archive.html">
+    <meta property="og:title" content="Αρχείο - Ημερολόγιο του φαρμακοποιού">
+    <meta property="og:description" content="Δείτε όλες τις προηγούμενες εκδόσεις του ημερολογίου από το 2005.">
+    <meta property="og:image" content="https://phasma.6x7.gr/images/calendar-cover-2026.webp">
+    <meta property="og:locale" content="el_GR">
+    <link rel="stylesheet" href="styles.min.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Αρχείο Εκδόσεων","url":"https://phasma.6x7.gr/archive.html","isPartOf":{"@type":"WebSite","name":"Phasma Promotions","url":"https://phasma.6x7.gr"}}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
+    <a href="#main-content" class="skip-link">Μετάβαση στο περιεχόμενο</a>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="nav-brand">Phasma Promotions</a>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Αρχική</a></li>
                 <li><a href="about.html">Σχετικά</a></li>
                 <li><a href="shop.html">Κατάστημα</a></li>
-                <li><a href="archive.html" class="active">Αρχείο</a></li>
-                <li><a href="settings.html">Ρυθμίσεις</a></li>
+                <li><a href="archive.html">Αρχείο</a></li>
             </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle-btn nav-theme-toggle" id="theme-toggle" aria-label="Εναλλαγή σκοτεινού θέματος">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Άνοιγμα μενού" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Archive Hero -->
+    <main id="main-content">
     <section class="page-hero">
         <div class="container">
             <h1 class="page-title">Αρχείο Εκδόσεων</h1>
@@ -44,11 +61,21 @@
     <section class="archive-page">
         <div class="container">
             <div class="archive-grid-full">
-                <!-- Generate archive items from 2005 to 2024 -->
+                <!-- Archive items from 2005 to 2025 -->
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2024-cover.jpg" alt="Ημερολόγιο 2024" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2024]</p>
+                        <img src="images/archive/2025.svg" alt="Ημερολόγιο 2025" class="archive-image-full" loading="lazy" width="300" height="420">
+                    </div>
+                    <div class="archive-info">
+                        <h3 class="archive-year">2025</h3>
+                        <p class="archive-description">Η έκδοση του 2025 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
+                    </div>
+                </div>
+
+                <div class="archive-item-full">
+                    <div class="archive-cover-full">
+                        <img src="images/archive/2024.svg" alt="Ημερολόγιο 2024" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2024</h3>
@@ -58,8 +85,8 @@
                 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2023-cover.jpg" alt="Ημερολόγιο 2023" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2023]</p>
+                        <img src="images/archive/2023.svg" alt="Ημερολόγιο 2023" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2023</h3>
@@ -69,8 +96,8 @@
                 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2022-cover.jpg" alt="Ημερολόγιο 2022" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2022]</p>
+                        <img src="images/archive/2022.svg" alt="Ημερολόγιο 2022" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2022</h3>
@@ -80,8 +107,8 @@
 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2021-cover.jpg" alt="Ημερολόγιο 2021" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2021]</p>
+                        <img src="images/archive/2021.svg" alt="Ημερολόγιο 2021" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2021</h3>
@@ -91,8 +118,8 @@
 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2020-cover.jpg" alt="Ημερολόγιο 2020" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2020]</p>
+                        <img src="images/archive/2020.svg" alt="Ημερολόγιο 2020" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2020</h3>
@@ -102,8 +129,8 @@
 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2019-cover.jpg" alt="Ημερολόγιο 2019" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2019]</p>
+                        <img src="images/archive/2019.svg" alt="Ημερολόγιο 2019" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2019</h3>
@@ -113,8 +140,8 @@
 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2018-cover.jpg" alt="Ημερολόγιο 2018" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2018]</p>
+                        <img src="images/archive/2018.svg" alt="Ημερολόγιο 2018" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2018</h3>
@@ -124,8 +151,8 @@
 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2017-cover.jpg" alt="Ημερολόγιο 2017" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2017]</p>
+                        <img src="images/archive/2017.svg" alt="Ημερολόγιο 2017" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2017</h3>
@@ -135,8 +162,8 @@
 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2016-cover.jpg" alt="Ημερολόγιο 2016" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2016]</p>
+                        <img src="images/archive/2016.svg" alt="Ημερολόγιο 2016" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2016</h3>
@@ -146,8 +173,8 @@
 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2015-cover.jpg" alt="Ημερολόγιο 2015" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2015]</p>
+                        <img src="images/archive/2015.svg" alt="Ημερολόγιο 2015" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2015</h3>
@@ -157,8 +184,8 @@
 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2014-cover.jpg" alt="Ημερολόγιο 2014" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2014]</p>
+                        <img src="images/archive/2014.svg" alt="Ημερολόγιο 2014" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2014</h3>
@@ -168,8 +195,8 @@
 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2013-cover.jpg" alt="Ημερολόγιο 2013" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2013]</p>
+                        <img src="images/archive/2013.svg" alt="Ημερολόγιο 2013" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2013</h3>
@@ -179,8 +206,8 @@
 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2012-cover.jpg" alt="Ημερολόγιο 2012" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2012]</p>
+                        <img src="images/archive/2012.svg" alt="Ημερολόγιο 2012" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2012</h3>
@@ -190,8 +217,8 @@
 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2011-cover.jpg" alt="Ημερολόγιο 2011" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2011]</p>
+                        <img src="images/archive/2011.svg" alt="Ημερολόγιο 2011" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2011</h3>
@@ -201,8 +228,8 @@
 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2010-cover.jpg" alt="Ημερολόγιο 2010" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2010]</p>
+                        <img src="images/archive/2010.svg" alt="Ημερολόγιο 2010" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2010</h3>
@@ -212,8 +239,8 @@
 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2009-cover.jpg" alt="Ημερολόγιο 2009" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2009]</p>
+                        <img src="images/archive/2009.svg" alt="Ημερολόγιο 2009" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2009</h3>
@@ -223,8 +250,8 @@
 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2008-cover.jpg" alt="Ημερολόγιο 2008" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2008]</p>
+                        <img src="images/archive/2008.svg" alt="Ημερολόγιο 2008" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2008</h3>
@@ -234,8 +261,8 @@
 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2007-cover.jpg" alt="Ημερολόγιο 2007" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2007]</p>
+                        <img src="images/archive/2007.svg" alt="Ημερολόγιο 2007" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2007</h3>
@@ -245,8 +272,8 @@
 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2006-cover.jpg" alt="Ημερολόγιο 2006" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2006]</p>
+                        <img src="images/archive/2006.svg" alt="Ημερολόγιο 2006" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2006</h3>
@@ -256,8 +283,8 @@
 
                 <div class="archive-item-full">
                     <div class="archive-cover-full">
-                        <img src="images/2005-cover.jpg" alt="Ημερολόγιο 2005" class="archive-image-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p class="placeholder-text" style="display:none;">[Εικόνα 2005]</p>
+                        <img src="images/archive/2005.svg" alt="Ημερολόγιο 2005" class="archive-image-full" loading="lazy" width="300" height="420">
+                        
                     </div>
                     <div class="archive-info">
                         <h3 class="archive-year">2005</h3>
@@ -267,16 +294,19 @@
             </div>
         </div>
     </section>
+    </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Phasma Promotions. Όλα τα δικαιώματα διατηρούνται.</p>
-            <p class="footer-contact">Για πληροφορίες και παραγγελίες: Τηλ. <span class="copyable-phone">210 9410331</span> | Email: <span class="copyable-email">fasma.promo@gmail.com</span></p>
+            <p class="footer-contact">Για πληροφορίες και παραγγελίες: Τηλ. <a href="tel:+302109410331" class="contact-link">210 9410331</a> | Email: <a href="mailto:fasma.promo@gmail.com" class="contact-link">fasma.promo@gmail.com</a></p>
+            <p class="footer-legal"><a href="privacy.html">Πολιτική Απορρήτου</a> · <a href="terms.html">Όροι Χρήσης</a></p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <a href="tel:+302109410331" class="float-call" aria-label="Καλέστε μας: 210 9410331">📞</a>
+    <button type="button" id="back-to-top" class="back-to-top" aria-label="Επιστροφή στην αρχή" hidden>↑</button>
+    <script src="script.min.js" defer></script>
 </body>
 </html>
 

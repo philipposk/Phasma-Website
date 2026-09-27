@@ -1,43 +1,30 @@
 // Shop page form handling
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contact-form');
+    if (!form) return;
+
     const phoneInput = document.getElementById('phone');
     const emailInput = document.getElementById('email');
     const formMessage = document.getElementById('form-message');
 
-    // Validate that at least phone or email is filled
     function validateContactInfo() {
-        const phone = phoneInput.value.trim();
-        const email = emailInput.value.trim();
-        
-        if (!phone && !email) {
-            return false;
-        }
-        return true;
+        return phoneInput.value.trim() || emailInput.value.trim();
     }
 
-    // Validate email format
     function validateEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
-    // Validate phone format (Greek phone numbers)
     function validatePhone(phone) {
-        const phoneRegex = /^[0-9]{10}$/;
-        return phoneRegex.test(phone.replace(/\s/g, ''));
+        return /^[0-9]{10}$/.test(phone.replace(/\s/g, ''));
     }
 
-    // Show form message
     function showMessage(message, type = 'success') {
         formMessage.textContent = message;
         formMessage.className = `form-message ${type}`;
         formMessage.style.display = 'block';
-        
-        // Scroll to message
         formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        
-        // Hide message after 5 seconds for success
+
         if (type === 'success') {
             setTimeout(() => {
                 formMessage.style.display = 'none';
@@ -45,25 +32,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Handle form submission
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-
-        // Reset message
         formMessage.style.display = 'none';
 
-        // Validate contact info
         if (!validateContactInfo()) {
             showMessage('Παρακαλώ συμπληρώστε τουλάχιστον ένα από τα δύο (τηλέφωνο ή email).', 'error');
-            if (!phoneInput.value.trim()) {
-                phoneInput.focus();
-            } else {
-                emailInput.focus();
-            }
+            (phoneInput.value.trim() ? emailInput : phoneInput).focus();
             return;
         }
 
-        // Validate email if provided
         const email = emailInput.value.trim();
         if (email && !validateEmail(email)) {
             showMessage('Παρακαλώ εισάγετε έγκυρο email.', 'error');
@@ -71,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Validate phone if provided
         const phone = phoneInput.value.trim();
         if (phone && !validatePhone(phone)) {
             showMessage('Παρακαλώ εισάγετε έγκυρο τηλέφωνο (10 ψηφία).', 'error');
@@ -79,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Get form data
         const formData = {
             name: document.getElementById('name').value.trim(),
             phone: phone,
@@ -90,10 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
             consent: document.getElementById('consent').checked
         };
 
-        // Send to Formspree
         const formspreeEndpoint = 'https://formspree.io/f/xvgdnyoe';
-        
-        // Show loading state
         const submitButton = form.querySelector('.submit-button');
         const originalButtonText = submitButton.textContent;
         submitButton.disabled = true;
@@ -109,9 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
             _subject: 'Νέα Παραγγελία - Ημερολόγιο Φαρμακοποιού',
             _replyto: formData.email || formData.phone || ''
         };
-        
-        console.log('Sending to Formspree:', formspreeEndpoint, requestBody);
-        
+
         fetch(formspreeEndpoint, {
             method: 'POST',
             headers: {
@@ -120,30 +91,17 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: JSON.stringify(requestBody)
         })
-        .then(response => {
-            console.log('Formspree response status:', response.status, response.statusText);
-            return response.text().then(text => {
-                let responseData = {};
-                try {
-                    responseData = JSON.parse(text);
-                } catch (e) {
-                    console.log('Response is not JSON:', text);
-                    responseData = { raw: text };
-                }
-                console.log('Formspree response data:', responseData);
-                
-                if (response.ok) {
-                    showMessage('Η αίτησή σας υποβλήθηκε επιτυχώς! Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.', 'success');
-                    form.reset();
-                } else {
-                    console.error('Formspree error response:', responseData);
-                    showMessage('Υπήρξε ένα σφάλμα. Παρακαλώ δοκιμάστε ξανά ή επικοινωνήστε μαζί μας απευθείας στο 210 9410331.', 'error');
-                }
-            });
+        .then(response => response.json().then(data => ({ ok: response.ok, data })))
+        .then(({ ok }) => {
+            if (ok) {
+                showMessage('Η αίτησή σας υποβλήθηκε επιτυχώς! Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.', 'success');
+                form.reset();
+            } else {
+                showMessage('Υπήρξε ένα σφάλμα. Παρακαλώ δοκιμάστε ξανά ή καλέστε στο 210 9410331.', 'error');
+            }
         })
-        .catch(error => {
-            console.error('Form submission error:', error);
-            showMessage('Υπήρξε ένα σφάλμα. Παρακαλώ δοκιμάστε ξανά ή επικοινωνήστε μαζί μας απευθείας στο 210 9410331.', 'error');
+        .catch(() => {
+            showMessage('Υπήρξε ένα σφάλμα. Παρακαλώ δοκιμάστε ξανά ή καλέστε στο 210 9410331.', 'error');
         })
         .finally(() => {
             submitButton.disabled = false;
@@ -151,36 +109,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Real-time validation feedback
     phoneInput.addEventListener('blur', function() {
         const phone = this.value.trim();
-        if (phone && !validatePhone(phone)) {
-            this.setCustomValidity('Παρακαλώ εισάγετε έγκυρο τηλέφωνο (10 ψηφία)');
-        } else {
-            this.setCustomValidity('');
-        }
+        this.setCustomValidity(phone && !validatePhone(phone) ? 'Παρακαλώ εισάγετε έγκυρο τηλέφωνο (10 ψηφία)' : '');
     });
 
     emailInput.addEventListener('blur', function() {
         const email = this.value.trim();
-        if (email && !validateEmail(email)) {
-            this.setCustomValidity('Παρακαλώ εισάγετε έγκυρο email');
-        } else {
-            this.setCustomValidity('');
-        }
+        this.setCustomValidity(email && !validateEmail(email) ? 'Παρακαλώ εισάγετε έγκυρο email' : '');
     });
-
-    // Check contact info on blur
-    function checkContactInfo() {
-        if (!validateContactInfo()) {
-            if (phoneInput.value.trim() || emailInput.value.trim()) {
-                // User is typing, don't show error yet
-                return;
-            }
-        }
-    }
-
-    phoneInput.addEventListener('blur', checkContactInfo);
-    emailInput.addEventListener('blur', checkContactInfo);
 });
-

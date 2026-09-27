@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://phasma.6x7.gr/sitemap.xml
