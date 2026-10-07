@@ -1,121 +1,64 @@
-// Shop page form handling
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contact-form');
-    if (!form) return;
+/* Order page: product picker + live price estimate. */
+(function () {
+  'use strict';
+  var PRODUCTS = {
+    calendar: { name: 'Ημερολόγιο 2027', price: 1.90, min: 50, step: 10 },
+    agenda:   { name: 'Ατζέντα (ΚΩΔ. 1)', price: 0.98, min: 200, step: 50 },
+    magnet:   { name: 'Μαγνητάκι (ΚΩΔ. 2)', price: 0.98, min: 1000, step: 100 }
+  };
+  var VAT = 0.24; // indicative standard Greek VAT rate
 
-    const phoneInput = document.getElementById('phone');
-    const emailInput = document.getElementById('email');
-    const formMessage = document.getElementById('form-message');
+  var sel = document.getElementById('product');
+  var qty = document.getElementById('quantity');
+  if (!sel || !qty) return;
+  var warn = document.getElementById('qty-warn');
+  var fmt = new Intl.NumberFormat('el-GR', { style: 'currency', currency: 'EUR' });
+  function $(id) { return document.getElementById(id); }
+  var last = sel.value;
 
-    function validateContactInfo() {
-        return phoneInput.value.trim() || emailInput.value.trim();
-    }
-
-    function validateEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    function validatePhone(phone) {
-        return /^[0-9]{10}$/.test(phone.replace(/\s/g, ''));
-    }
-
-    function showMessage(message, type = 'success') {
-        formMessage.textContent = message;
-        formMessage.className = `form-message ${type}`;
-        formMessage.style.display = 'block';
-        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-        if (type === 'success') {
-            setTimeout(() => {
-                formMessage.style.display = 'none';
-            }, 5000);
-        }
-    }
-
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        formMessage.style.display = 'none';
-
-        if (!validateContactInfo()) {
-            showMessage('Παρακαλώ συμπληρώστε τουλάχιστον ένα από τα δύο (τηλέφωνο ή email).', 'error');
-            (phoneInput.value.trim() ? emailInput : phoneInput).focus();
-            return;
-        }
-
-        const email = emailInput.value.trim();
-        if (email && !validateEmail(email)) {
-            showMessage('Παρακαλώ εισάγετε έγκυρο email.', 'error');
-            emailInput.focus();
-            return;
-        }
-
-        const phone = phoneInput.value.trim();
-        if (phone && !validatePhone(phone)) {
-            showMessage('Παρακαλώ εισάγετε έγκυρο τηλέφωνο (10 ψηφία).', 'error');
-            phoneInput.focus();
-            return;
-        }
-
-        const formData = {
-            name: document.getElementById('name').value.trim(),
-            phone: phone,
-            email: email,
-            product: document.getElementById('product').value,
-            quantity: document.getElementById('quantity').value || '',
-            comments: document.getElementById('comments').value.trim(),
-            consent: document.getElementById('consent').checked
-        };
-
-        const formspreeEndpoint = 'https://formspree.io/f/xvgdnyoe';
-        const submitButton = form.querySelector('.submit-button');
-        const originalButtonText = submitButton.textContent;
-        submitButton.disabled = true;
-        submitButton.textContent = 'Αποστολή...';
-
-        const requestBody = {
-            name: formData.name,
-            phone: formData.phone || 'Δεν δόθηκε',
-            email: formData.email || 'Δεν δόθηκε',
-            product: formData.product || 'Δεν επιλέχθηκε',
-            quantity: formData.quantity || 'Δεν καθορίστηκε',
-            comments: formData.comments || 'Δεν υπάρχουν σχόλια',
-            _subject: 'Νέα Παραγγελία - Ημερολόγιο Φαρμακοποιού',
-            _replyto: formData.email || formData.phone || ''
-        };
-
-        fetch(formspreeEndpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(requestBody)
-        })
-        .then(response => response.json().then(data => ({ ok: response.ok, data })))
-        .then(({ ok }) => {
-            if (ok) {
-                showMessage('Η αίτησή σας υποβλήθηκε επιτυχώς! Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.', 'success');
-                form.reset();
-            } else {
-                showMessage('Υπήρξε ένα σφάλμα. Παρακαλώ δοκιμάστε ξανά ή καλέστε στο 210 9410331.', 'error');
-            }
-        })
-        .catch(() => {
-            showMessage('Υπήρξε ένα σφάλμα. Παρακαλώ δοκιμάστε ξανά ή καλέστε στο 210 9410331.', 'error');
-        })
-        .finally(() => {
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
-        });
+  function current() {
+    var p = PRODUCTS[sel.value];
+    var q = parseInt(qty.value, 10);
+    return { p: p, q: isNaN(q) ? 0 : q };
+  }
+  function refresh() {
+    var c = current(), net = c.q * c.p.price, ok = c.q >= c.p.min;
+    qty.step = c.p.step; qty.min = c.p.min;
+    warn.textContent = ok || !c.q ? '' : 'Η ελάχιστη παραγγελία είναι ' + c.p.min + ' τεμάχια.';
+    $('r-product').textContent = c.p.name;
+    $('r-unit').textContent = fmt.format(c.p.price);
+    $('r-qty').textContent = c.q ? c.q + ' τεμ.' : '—';
+    $('r-net').textContent = c.q ? fmt.format(net) : '—';
+    $('r-vat').textContent = c.q ? fmt.format(net * VAT) : '—';
+    $('r-gross').textContent = c.q ? fmt.format(net * (1 + VAT)) : '—';
+    document.querySelectorAll('.pick').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-product') === sel.value)); b.textContent = b.getAttribute('data-product') === sel.value ? '✓ Επιλεγμένο' : 'Επιλογή'; });
+  }
+  sel.addEventListener('change', function () {
+    var prev = PRODUCTS[last], next = PRODUCTS[sel.value], q = parseInt(qty.value, 10);
+    if (isNaN(q) || q <= prev.min) qty.value = next.min; else if (q < next.min) qty.value = next.min;
+    last = sel.value; refresh();
+  });
+  qty.addEventListener('input', refresh);
+  qty.addEventListener('blur', function () { var c = current(); if (c.q && c.q < c.p.min) { qty.value = c.p.min; } refresh(); });
+  $('qty-minus').addEventListener('click', function () { var c = current(); qty.value = Math.max(c.p.min, c.q - c.p.step); refresh(); });
+  $('qty-plus').addEventListener('click', function () { var c = current(); qty.value = (c.q || c.p.min) + c.p.step; refresh(); });
+  document.querySelectorAll('.pick').forEach(function (b) {
+    b.addEventListener('click', function () {
+      sel.value = b.getAttribute('data-product'); sel.dispatchEvent(new Event('change'));
+      document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
     });
+  });
+  // Allow deep links like shop.html?product=agenda&qty=300
+  var q = new URLSearchParams(location.search);
+  if (PRODUCTS[q.get('product')]) { sel.value = q.get('product'); last = sel.value; qty.value = PRODUCTS[sel.value].min; }
+  if (parseInt(q.get('qty'), 10) > 0) qty.value = parseInt(q.get('qty'), 10);
 
-    phoneInput.addEventListener('blur', function() {
-        const phone = this.value.trim();
-        this.setCustomValidity(phone && !validatePhone(phone) ? 'Παρακαλώ εισάγετε έγκυρο τηλέφωνο (10 ψηφία)' : '');
-    });
-
-    emailInput.addEventListener('blur', function() {
-        const email = this.value.trim();
-        this.setCustomValidity(email && !validateEmail(email) ? 'Παρακαλώ εισάγετε έγκυρο email' : '');
-    });
-});
+  window.PhasmaOrder = {
+    refresh: function () { sel.value = 'calendar'; last = 'calendar'; qty.value = PRODUCTS.calendar.min; refresh(); },
+    summary: function () {
+      var c = current();
+      return { product: c.p.name, quantity: String(c.q), estimate: c.q ? fmt.format(c.q * c.p.price) + ' χωρίς ΦΠΑ (' + fmt.format(c.q * c.p.price * (1 + VAT)) + ' με ΦΠΑ 24%)' : '—' };
+    }
+  };
+  refresh();
+})();
