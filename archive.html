@@ -1,312 +1,111 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#2d8659">
-    <meta name="description" content="Αρχείο εκδόσεων του ημερολογίου του φαρμακοποιού από το 2005 έως το 2025. Phasma Promotions.">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <title>Αρχείο - Ημερολόγιο του φαρμακοποιού</title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="images/logo-small.png">
-    <link rel="canonical" href="https://phasma.6x7.gr/archive.html">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://phasma.6x7.gr/archive.html">
-    <meta property="og:title" content="Αρχείο - Ημερολόγιο του φαρμακοποιού">
-    <meta property="og:description" content="Δείτε όλες τις προηγούμενες εκδόσεις του ημερολογίου από το 2005.">
-    <meta property="og:image" content="https://phasma.6x7.gr/images/calendar-cover-2026.webp">
-    <meta property="og:locale" content="el_GR">
-    <link rel="stylesheet" href="styles.min.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Αρχείο Εκδόσεων","url":"https://phasma.6x7.gr/archive.html","isPartOf":{"@type":"WebSite","name":"Phasma Promotions","url":"https://phasma.6x7.gr"}}</script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#1F8B3B">
+<title>Αρχείο εκδόσεων 2005–2026 — Ημερολόγιο του Φαρμακοποιού</title>
+<meta name="description" content="Όλες οι εκδόσεις του Ημερολογίου του Φαρμακοποιού από το 2005. Πάνω από 20 χρόνια αποκλειστικά στα φαρμακεία.">
+
+<link rel="canonical" href="https://phasma.6x7.gr/archive.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="images/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Phasma Promotions">
+<meta property="og:locale" content="el_GR">
+<meta property="og:title" content="Αρχείο εκδόσεων 2005–2026 — Ημερολόγιο του Φαρμακοποιού">
+<meta property="og:description" content="Όλες οι εκδόσεις του Ημερολογίου του Φαρμακοποιού από το 2005. Πάνω από 20 χρόνια αποκλειστικά στα φαρμακεία.">
+<meta property="og:url" content="https://phasma.6x7.gr/archive.html">
+<meta property="og:image" content="https://phasma.6x7.gr/images/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/commissioner-greek.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://phasma.6x7.gr/#org", "name": "Phasma Promotions", "url": "https://phasma.6x7.gr/", "logo": "https://phasma.6x7.gr/images/icon-512.png", "telephone": "+30-210-9410331", "email": "fasma.promo@gmail.com", "description": "Εκδόσεις προϊόντων διαφήμισης για φαρμακεία στην Ελλάδα. Το Ημερολόγιο του Φαρμακοποιού.", "contactPoint": {"@type": "ContactPoint", "telephone": "+30-210-9410331", "email": "fasma.promo@gmail.com", "contactType": "sales", "areaServed": "GR", "availableLanguage": "el", "name": "Αλεξία Λεβαντή"}}, {"@type": "CollectionPage", "name": "Αρχείο εκδόσεων", "url": "https://phasma.6x7.gr/archive.html"}]}</script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Μετάβαση στο περιεχόμενο</a>
-    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="nav-brand">Phasma Promotions</a>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Αρχική</a></li>
-                <li><a href="about.html">Σχετικά</a></li>
-                <li><a href="shop.html">Κατάστημα</a></li>
-                <li><a href="archive.html">Αρχείο</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="theme-toggle-btn nav-theme-toggle" id="theme-toggle" aria-label="Εναλλαγή σκοτεινού θέματος">
-                    <span class="theme-icon">🌙</span>
-                </button>
-                <button class="hamburger" id="hamburger" aria-label="Άνοιγμα μενού" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
+<a class="skip-link" href="#main">Μετάβαση στο περιεχόμενο</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<header class="site-header">
+<div class="container">
+<a class="brand" href="index.html" aria-label="Phasma Promotions — αρχική"><svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21.5" fill="#fff" stroke="#00C5FF" stroke-width="3"/><path d="M20 11h8v9h9v8h-9v9h-8v-9h-9v-8h9Z" fill="#1F8B3B"/></svg><span>Phasma Promotions<small>Ημερολόγιο του Φαρμακοποιού</small></span></a>
+<button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Μενού"><span></span></button>
+<nav class="nav" id="nav" aria-label="Κύριο μενού">
+<a href="index.html">Αρχική</a><a href="shop.html">Παραγγελία</a><a href="archive.html" aria-current="page">Αρχείο</a><a href="about.html">Σχετικά</a><a href="faq.html">Ερωτήσεις</a><a href="contact.html">Επικοινωνία</a>
+<a class="btn nav-call" href="tel:+302109410331"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.6 3.5h3l1.4 4-2 1.3a11 11 0 0 0 5.2 5.2l1.3-2 4 1.4v3a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 4.6 5.7 2 2 0 0 1 6.6 3.5Z"/></svg> 210 9410331</a>
+</nav>
+<a class="btn btn-sm header-cta" href="tel:+302109410331">210 9410331</a>
+</div>
+</header>
+<main id="main">
 
-    <main id="main-content">
-    <section class="page-hero">
-        <div class="container">
-            <h1 class="page-title">Αρχείο Εκδόσεων</h1>
-            <p class="page-subtitle">Δείτε όλες τις προηγούμενες εκδόσεις του ημερολογίου</p>
-        </div>
-    </section>
-
-    <!-- Archive Section -->
-    <section class="archive-page">
-        <div class="container">
-            <div class="archive-grid-full">
-                <!-- Archive items from 2005 to 2025 -->
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2025.svg" alt="Ημερολόγιο 2025" class="archive-image-full" loading="lazy" width="300" height="420">
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2025</h3>
-                        <p class="archive-description">Η έκδοση του 2025 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2024.svg" alt="Ημερολόγιο 2024" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2024</h3>
-                        <p class="archive-description">Η έκδοση του 2024 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-                
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2023.svg" alt="Ημερολόγιο 2023" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2023</h3>
-                        <p class="archive-description">Η έκδοση του 2023 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-                
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2022.svg" alt="Ημερολόγιο 2022" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2022</h3>
-                        <p class="archive-description">Η έκδοση του 2022 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2021.svg" alt="Ημερολόγιο 2021" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2021</h3>
-                        <p class="archive-description">Η έκδοση του 2021 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2020.svg" alt="Ημερολόγιο 2020" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2020</h3>
-                        <p class="archive-description">Η έκδοση του 2020 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2019.svg" alt="Ημερολόγιο 2019" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2019</h3>
-                        <p class="archive-description">Η έκδοση του 2019 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2018.svg" alt="Ημερολόγιο 2018" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2018</h3>
-                        <p class="archive-description">Η έκδοση του 2018 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2017.svg" alt="Ημερολόγιο 2017" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2017</h3>
-                        <p class="archive-description">Η έκδοση του 2017 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2016.svg" alt="Ημερολόγιο 2016" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2016</h3>
-                        <p class="archive-description">Η έκδοση του 2016 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2015.svg" alt="Ημερολόγιο 2015" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2015</h3>
-                        <p class="archive-description">Η έκδοση του 2015 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2014.svg" alt="Ημερολόγιο 2014" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2014</h3>
-                        <p class="archive-description">Η έκδοση του 2014 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2013.svg" alt="Ημερολόγιο 2013" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2013</h3>
-                        <p class="archive-description">Η έκδοση του 2013 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2012.svg" alt="Ημερολόγιο 2012" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2012</h3>
-                        <p class="archive-description">Η έκδοση του 2012 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2011.svg" alt="Ημερολόγιο 2011" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2011</h3>
-                        <p class="archive-description">Η έκδοση του 2011 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2010.svg" alt="Ημερολόγιο 2010" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2010</h3>
-                        <p class="archive-description">Η έκδοση του 2010 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2009.svg" alt="Ημερολόγιο 2009" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2009</h3>
-                        <p class="archive-description">Η έκδοση του 2009 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2008.svg" alt="Ημερολόγιο 2008" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2008</h3>
-                        <p class="archive-description">Η έκδοση του 2008 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2007.svg" alt="Ημερολόγιο 2007" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2007</h3>
-                        <p class="archive-description">Η έκδοση του 2007 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2006.svg" alt="Ημερολόγιο 2006" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2006</h3>
-                        <p class="archive-description">Η έκδοση του 2006 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-
-                <div class="archive-item-full">
-                    <div class="archive-cover-full">
-                        <img src="images/archive/2005.svg" alt="Ημερολόγιο 2005" class="archive-image-full" loading="lazy" width="300" height="420">
-                        
-                    </div>
-                    <div class="archive-info">
-                        <h3 class="archive-year">2005</h3>
-                        <p class="archive-description">Η πρώτη έκδοση του ημερολογίου το 2005 με μοναδικό εξώφυλλο και εσωτερικές σελίδες με σχέδια.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Phasma Promotions. Όλα τα δικαιώματα διατηρούνται.</p>
-            <p class="footer-contact">Για πληροφορίες και παραγγελίες: Τηλ. <a href="tel:+302109410331" class="contact-link">210 9410331</a> | Email: <a href="mailto:fasma.promo@gmail.com" class="contact-link">fasma.promo@gmail.com</a></p>
-            <p class="footer-legal"><a href="privacy.html">Πολιτική Απορρήτου</a> · <a href="terms.html">Όροι Χρήσης</a></p>
-        </div>
-    </footer>
-
-    <a href="tel:+302109410331" class="float-call" aria-label="Καλέστε μας: 210 9410331">📞</a>
-    <button type="button" id="back-to-top" class="back-to-top" aria-label="Επιστροφή στην αρχή" hidden>↑</button>
-    <script src="script.min.js" defer></script>
+<section class="page-hero"><div class="container">
+<p class="crumbs"><a href="index.html">Αρχική</a> / Αρχείο</p>
+<h1>Αρχείο εκδόσεων</h1>
+<p class="lead">Κάθε χρονιά, από το 2005, ένα νέο ημερολόγιο για τα φαρμακεία της Ελλάδας. Πατήστε σε μια έκδοση για μεγέθυνση.</p>
+</div></section>
+<section class="section"><div class="container">
+<div class="chips" id="chips" role="group" aria-label="Φίλτρο ανά δεκαετία">
+<button class="chip" type="button" aria-pressed="true" data-filter="all">Όλες</button>
+<button class="chip" type="button" aria-pressed="false" data-filter="2020">2020–2026</button>
+<button class="chip" type="button" aria-pressed="false" data-filter="2010">2010–2019</button>
+<button class="chip" type="button" aria-pressed="false" data-filter="2005">2005–2009</button>
+</div>
+<div class="archive-grid" id="archive-grid"><button class="archive-item reveal" type="button" data-decade="2020" data-year="2026" data-src="images/calendar-cover-2026-web.jpg"><img src="images/calendar-cover-2026-web.jpg" alt="Ημερολόγιο 2026" width="300" height="240" loading="lazy"><b>2026</b></button><button class="archive-item reveal" type="button" data-decade="2020" data-year="2025" data-src="images/archive/2025.svg"><img src="images/archive/2025.svg" alt="Ημερολόγιο 2025" width="300" height="420" loading="lazy"><b>2025</b></button><button class="archive-item reveal" type="button" data-decade="2020" data-year="2024" data-src="images/archive/2024.svg"><img src="images/archive/2024.svg" alt="Ημερολόγιο 2024" width="300" height="420" loading="lazy"><b>2024</b></button><button class="archive-item reveal" type="button" data-decade="2020" data-year="2023" data-src="images/archive/2023.svg"><img src="images/archive/2023.svg" alt="Ημερολόγιο 2023" width="300" height="420" loading="lazy"><b>2023</b></button><button class="archive-item reveal" type="button" data-decade="2020" data-year="2022" data-src="images/archive/2022.svg"><img src="images/archive/2022.svg" alt="Ημερολόγιο 2022" width="300" height="420" loading="lazy"><b>2022</b></button><button class="archive-item reveal" type="button" data-decade="2020" data-year="2021" data-src="images/archive/2021.svg"><img src="images/archive/2021.svg" alt="Ημερολόγιο 2021" width="300" height="420" loading="lazy"><b>2021</b></button><button class="archive-item reveal" type="button" data-decade="2020" data-year="2020" data-src="images/archive/2020.svg"><img src="images/archive/2020.svg" alt="Ημερολόγιο 2020" width="300" height="420" loading="lazy"><b>2020</b></button><button class="archive-item reveal" type="button" data-decade="2010" data-year="2019" data-src="images/archive/2019.svg"><img src="images/archive/2019.svg" alt="Ημερολόγιο 2019" width="300" height="420" loading="lazy"><b>2019</b></button><button class="archive-item reveal" type="button" data-decade="2010" data-year="2018" data-src="images/archive/2018.svg"><img src="images/archive/2018.svg" alt="Ημερολόγιο 2018" width="300" height="420" loading="lazy"><b>2018</b></button><button class="archive-item reveal" type="button" data-decade="2010" data-year="2017" data-src="images/archive/2017.svg"><img src="images/archive/2017.svg" alt="Ημερολόγιο 2017" width="300" height="420" loading="lazy"><b>2017</b></button><button class="archive-item reveal" type="button" data-decade="2010" data-year="2016" data-src="images/archive/2016.svg"><img src="images/archive/2016.svg" alt="Ημερολόγιο 2016" width="300" height="420" loading="lazy"><b>2016</b></button><button class="archive-item reveal" type="button" data-decade="2010" data-year="2015" data-src="images/archive/2015.svg"><img src="images/archive/2015.svg" alt="Ημερολόγιο 2015" width="300" height="420" loading="lazy"><b>2015</b></button><button class="archive-item reveal" type="button" data-decade="2010" data-year="2014" data-src="images/archive/2014.svg"><img src="images/archive/2014.svg" alt="Ημερολόγιο 2014" width="300" height="420" loading="lazy"><b>2014</b></button><button class="archive-item reveal" type="button" data-decade="2010" data-year="2013" data-src="images/archive/2013.svg"><img src="images/archive/2013.svg" alt="Ημερολόγιο 2013" width="300" height="420" loading="lazy"><b>2013</b></button><button class="archive-item reveal" type="button" data-decade="2010" data-year="2012" data-src="images/archive/2012.svg"><img src="images/archive/2012.svg" alt="Ημερολόγιο 2012" width="300" height="420" loading="lazy"><b>2012</b></button><button class="archive-item reveal" type="button" data-decade="2010" data-year="2011" data-src="images/archive/2011.svg"><img src="images/archive/2011.svg" alt="Ημερολόγιο 2011" width="300" height="420" loading="lazy"><b>2011</b></button><button class="archive-item reveal" type="button" data-decade="2010" data-year="2010" data-src="images/archive/2010.svg"><img src="images/archive/2010.svg" alt="Ημερολόγιο 2010" width="300" height="420" loading="lazy"><b>2010</b></button><button class="archive-item reveal" type="button" data-decade="2005" data-year="2009" data-src="images/archive/2009.svg"><img src="images/archive/2009.svg" alt="Ημερολόγιο 2009" width="300" height="420" loading="lazy"><b>2009</b></button><button class="archive-item reveal" type="button" data-decade="2005" data-year="2008" data-src="images/archive/2008.svg"><img src="images/archive/2008.svg" alt="Ημερολόγιο 2008" width="300" height="420" loading="lazy"><b>2008</b></button><button class="archive-item reveal" type="button" data-decade="2005" data-year="2007" data-src="images/archive/2007.svg"><img src="images/archive/2007.svg" alt="Ημερολόγιο 2007" width="300" height="420" loading="lazy"><b>2007</b></button><button class="archive-item reveal" type="button" data-decade="2005" data-year="2006" data-src="images/archive/2006.svg"><img src="images/archive/2006.svg" alt="Ημερολόγιο 2006" width="300" height="420" loading="lazy"><b>2006</b></button><button class="archive-item reveal" type="button" data-decade="2005" data-year="2005" data-src="images/archive/2005.svg"><img src="images/archive/2005.svg" alt="Ημερολόγιο 2005" width="300" height="420" loading="lazy"><b>2005</b></button></div>
+<p class="note center mt-lg">Η έκδοση 2027 είναι η τρέχουσα. <a href="index.html">Δείτε τη στην αρχική</a>.</p>
+</div></section>
+<dialog class="lightbox" id="lightbox" aria-label="Μεγέθυνση έκδοσης">
+<div class="lightbox-inner"><img id="lb-img" src="" alt=""><div class="lightbox-bar"><button type="button" id="lb-prev" aria-label="Προηγούμενη έκδοση">‹</button><b id="lb-year"></b><button type="button" id="lb-next" aria-label="Επόμενη έκδοση">›</button></div><p class="mt"><button type="button" id="lb-close">Κλείσιμο</button></p></div>
+</dialog>
+<section class="section"><div class="container"><div class="cta reveal">
+<h2>Θέλετε τη δική σας έκδοση;</h2>
+<p>Η επόμενη έκδοση μπορεί να είναι δική σας. Καλέστε μας ή στείλτε το αίτημά σας.</p>
+<div class="btn-row">
+<a class="btn" href="tel:+302109410331"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.6 3.5h3l1.4 4-2 1.3a11 11 0 0 0 5.2 5.2l1.3-2 4 1.4v3a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 4.6 5.7 2 2 0 0 1 6.6 3.5Z"/></svg> 210 9410331</a>
+<a class="btn btn-outline" href="shop.html">Φόρμα παραγγελίας</a>
+</div></div></div></section></main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21.5" fill="#fff" stroke="#00C5FF" stroke-width="3"/><path d="M20 11h8v9h9v8h-9v9h-8v-9h-9v-8h9Z" fill="#1F8B3B"/></svg><span>Phasma Promotions</span></div>
+<p>Το Ημερολόγιο του Φαρμακοποιού. 22 Χρόνια Αποκλειστικά στα Φαρμακεία.</p>
+</div>
+<div>
+<h3>Σελίδες</h3>
+<ul>
+<li><a href="index.html">Αρχική</a></li>
+<li><a href="shop.html">Παραγγελία</a></li>
+<li><a href="archive.html">Αρχείο εκδόσεων</a></li>
+<li><a href="about.html">Σχετικά</a></li>
+<li><a href="faq.html">Συχνές ερωτήσεις</a></li>
+</ul>
+</div>
+<div>
+<h3>Επικοινωνία</h3>
+<ul>
+<li>Αλεξία Λεβαντή</li>
+<li><a href="tel:+302109410331">210 9410331</a></li>
+<li><a href="mailto:fasma.promo@gmail.com">fasma.promo@gmail.com</a></li>
+<li><a href="contact.html">Φόρμα επικοινωνίας</a></li>
+</ul>
+</div>
+<div>
+<h3>Νομικά</h3>
+<ul>
+<li><a href="privacy.html">Πολιτική Απορρήτου</a></li>
+<li><a href="terms.html">Όροι Χρήσης</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom"><span>&copy; 2026 Phasma Promotions. Όλα τα δικαιώματα διατηρούνται.</span><span>Όλες οι τιμές είναι χωρίς ΦΠΑ.</span></div>
+</div>
+</footer>
+<a class="float-call" href="tel:+302109410331" aria-label="Καλέστε μας: 210 9410331"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.6 3.5h3l1.4 4-2 1.3a11 11 0 0 0 5.2 5.2l1.3-2 4 1.4v3a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 4.6 5.7 2 2 0 0 1 6.6 3.5Z"/></svg></a>
+<button class="to-top" id="to-top" type="button" aria-label="Επιστροφή στην αρχή" hidden>↑</button>
+<script src="script.js" defer></script>
+<script src="archive.js" defer></script>
 </body>
 </html>
-
